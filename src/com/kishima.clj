@@ -7,6 +7,7 @@
             [com.kishima.ui :as ui]
             [com.kishima.worker :as worker]
             [com.kishima.schema :as schema]
+            [com.kishima.postgres :as postgres]
             [clojure.test :as test]
             [clojure.tools.logging :as log]
             [clojure.tools.namespace.repl :as tn-repl]
@@ -68,7 +69,8 @@
    biff/use-tx-listener
    biff/use-jetty
    biff/use-chime
-   biff/use-beholder])
+   biff/use-beholder
+   postgres/use-postgres])
 
 (defn start []
   (let [new-system (reduce (fn [system component]

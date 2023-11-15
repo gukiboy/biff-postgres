@@ -27,6 +27,10 @@
     ;; You could send this as an email instead of printing.
     (log/info "WOAH there's a new user")))
 
+(defn alert-new-user-postgres
+  [{:keys [biff.postgres/db]} db]
+  nil)
+
 (defn echo-consumer [{:keys [biff/job] :as ctx}]
   (prn :echo job)
   (when-some [callback (:biff/callback job)]
